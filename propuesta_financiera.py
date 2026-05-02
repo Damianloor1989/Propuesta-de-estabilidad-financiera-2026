@@ -41,7 +41,7 @@ with col3:
 
 st.info("""
 **Logros Técnicos Recientes:**
-* Aprendizaje y Captacion rapida en cambios de procesos.
+* Aprendizaje y Adaptacion rapida a cambios en procesos.
 * Optimización del flujo de carga de microcréditos en el sistema interno.
 * Creacion de Orden de Archivo desde cero.
 """)
