@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Configuración de página con estilo profesional
-st.set_page_config(page_title="Propuesta Ejecutiva - Fidelidad y Crecimiento", layout="wide")
+st.set_page_config(page_title="Propuesta de Crecimiento y Estabilidad Financiera", layout="wide")
 
 # Estilos CSS personalizados para un look financiero
 st.markdown("""
