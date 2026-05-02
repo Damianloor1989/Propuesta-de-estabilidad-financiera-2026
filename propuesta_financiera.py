@@ -57,7 +57,7 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("Datos del Crédito")
 monto_solicitado = st.sidebar.number_input("Monto Hipotecario ($)", value=33000.0)
 plazo = st.sidebar.slider("Plazo (Años)", 5, 25, 20)
-tasa = st.sidebar.slider("Tasa de Interés (%)", 4.0, 11.5, 9.0)
+tasa = st.sidebar.slider("Tasa de Interés (%)", 4.0, 11.5, 8.69)
 
 # Cálculo de Cuota (Sistema Francés)
 r = (tasa / 100) / 12
