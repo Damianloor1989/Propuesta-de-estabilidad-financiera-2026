@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # 1. CONFIGURACIÓN Y ESTILO
-st.set_page_config(page_title="Propuesta Financiera Consolidada", layout="wide")
+st.set_page_config(page_title="Propuesta Financiera Consolidacion Biess", layout="wide")
 
 st.markdown("""
 <style>
@@ -63,9 +63,8 @@ with col_s3:
 
 st.markdown(f"""
 <div class="salary-card">
-    <b>Impacto del Ajuste:</b> Este incremento permite que la nueva relación cuota/ingreso sea de 
-    <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando la sostenibilidad de la deuda y 
-    ajustando mi remuneración a la responsabilidad técnica de mis 13 años de trayectoria.
+    <b>Impacto del Ajuste:</b> Este incremento  y Credito Hipotecario permite que la nueva relación cuota/ingreso sea de 
+    <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando la Estabilidad economica en mi flijo mensual ya que al momento es de 56%.
 </div>
 """, unsafe_allow_html=True)
 
