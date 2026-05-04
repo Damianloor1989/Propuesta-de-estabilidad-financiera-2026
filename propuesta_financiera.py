@@ -99,6 +99,6 @@ st.table(pd.DataFrame(mejoras))
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center;">
-    <p><i>"Mi objetivo es alinear mi estabilidad familiar con mi proyección profesional a largo plazo en esta institución."</i></p>
+    <p><i>"Mi objetivo es alinear mi estabilidad economica familiar con mi proyección profesional a largo plazo en esta institución."</i></p>
 </div>
 """, unsafe_allow_html=True)
