@@ -91,7 +91,7 @@ st.markdown("""
 <div class="benefit-card">
     <h4>¿Por qué esta propuesta es beneficiosa para la Institucion?</h4>
     <ul>
-        <li><b>Talento Humano:</b> Asegura la permanencia de un Asistente de Crédito con 13 años de experiencia.</li>
+        <li><b>Talento Humano:</b> Asegura la permanencia de un Asistente de Crédito con experiencia.</li>
         <li><b>Mitigación de Riesgos:</b> La consolidación elimina el estrés financiero del colaborador, aumentando la productividad y el enfoque.</li>
         <li><b>Garantía Real:</b> El crédito es de bajo riesgo ya que se respalda con un activo fijo (vivienda).</li>
 </div>
