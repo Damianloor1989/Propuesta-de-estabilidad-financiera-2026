@@ -95,8 +95,6 @@ st.markdown("""
         <li><b>Retención de Talento Crítico:</b> Asegura la permanencia de un Asistente de Crédito con 13 años de experiencia.</li>
         <li><b>Mitigación de Riesgos:</b> La consolidación elimina el estrés financiero del colaborador, aumentando la productividad y el enfoque.</li>
         <li><b>Garantía Real:</b> El crédito es de bajo riesgo ya que se respalda con un activo fijo (vivienda).</li>
-        
-    </ul>
 </div>
 """, unsafe_allow_html=True)
 
