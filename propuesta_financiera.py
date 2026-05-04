@@ -81,8 +81,8 @@ with col_graf1:
 
 with col_graf2:
     st.subheader("Distribución del Crédito")
-    inversion_data = {"Destino": ["BIESS Hipotecario", "BIESS Quirografario", "Otros/Mejoras"], 
-                      "Monto": [monto_solicitado*0.6, monto_solicitado*0.3, monto_solicitado*0.1]}
+    inversion_data = {"Destino": ["BIESS Hipotecario", "Quirografarios y Personal", "Mejoras y Costos Legales"], 
+                      "Monto": [monto_solicitado*0.63, monto_solicitado*0.27, monto_solicitado*0.1]}
     fig_pie = px.pie(pd.DataFrame(inversion_data), values="Monto", names="Destino", hole=0.4)
     st.plotly_chart(fig_pie, use_container_width=True)
 
