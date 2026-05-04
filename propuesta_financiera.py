@@ -16,24 +16,24 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 2. ENCABEZADO
-st.title("💼 Estrategia de Optimización y Evolución Profesional")
-st.subheader("Postulante: [Tu Nombre] | Asistente de Crédito (13 años)")
+st.title("💼 Propuesta de Optimización y Estabilidad Financiera")
+st.subheader("Solicitante: Damian Loor Guerrero | Asistente de Crédito (13 años)")
 st.markdown("---")
 
 # 3. PARÁMETROS DE ENTRADA (SIDEBAR)
 st.sidebar.header("📊 Parámetros del Análisis")
 
 # Salario con salto de 100 en 100 o manual
-salario_base = st.sidebar.number_input("Salario Actual ($)", value=850.0, step=50.0)
+salario_base = st.sidebar.number_input("Salario Actual ($)", value=750.0, step=50.0)
 # Crédito con salto de 1000 en 1000
-monto_solicitado = st.sidebar.number_input("Monto Total Proyectado ($)", value=30000.0, step=1000.0)
+monto_solicitado = st.sidebar.number_input("Monto Total Proyectado ($)", value=33000.0, step=1000.0)
 
-pct_aumento = st.sidebar.slider("Aumento solicitado (%)", 5, 50, 15)
+pct_aumento = st.sidebar.slider("Aumento solicitado (%)", 5, 15, 6)
 salario_nuevo = salario_base * (1 + pct_aumento / 100)
 
 st.sidebar.markdown("---")
-plazo_anios = st.sidebar.slider("Plazo (Años)", 5, 25, 15)
-tasa_anual = st.sidebar.slider("Tasa Interés Anual (%)", 8.0, 11.5, 9.5)
+plazo_anios = st.sidebar.slider("Plazo (Años)", 5, 30, 20)
+tasa_anual = st.sidebar.slider("Tasa Interés Anual (%)", 3.0, 11.0, 8.6)
 tipo_tabla = st.sidebar.selectbox("Sistema de Amortización", ["Francesa (Cuota Fija)", "Alemana (Cuota Decreciente)"])
 tasa_seguros = st.sidebar.number_input("Seguros % mensual", value=0.07, format="%.3f")
 
@@ -92,10 +92,10 @@ st.markdown("""
 <div class="benefit-card">
     <h4>¿Por qué esta propuesta es beneficiosa para la empresa?</h4>
     <ul>
-        <li><b>Retención de Talento Crítico:</b> Asegura la permanencia de un Asistente de Crédito con 13 años de memoria institucional.</li>
+        <li><b>Retención de Talento Crítico:</b> Asegura la permanencia de un Asistente de Crédito con 13 años de experiencia.</li>
         <li><b>Mitigación de Riesgos:</b> La consolidación elimina el estrés financiero del colaborador, aumentando la productividad y el enfoque.</li>
-        <li><b>Garantía Real:</b> El crédito se respalda con un activo fijo (vivienda), fortaleciendo el vínculo patrimonial con la institución.</li>
-        <li><b>Innovación Aplicada:</b> El uso de herramientas como este Dashboard demuestra capacidad de automatización aplicada al análisis de riesgos.</li>
+        <li><b>Garantía Real:</b> El crédito es de bajo riesgo ya que se respalda con un activo fijo (vivienda).</li>
+        
     </ul>
 </div>
 """, unsafe_allow_html=True)
