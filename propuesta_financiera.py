@@ -64,7 +64,7 @@ with col_s3:
 st.markdown(f"""
 <div class="salary-card">
     <b>Impacto del Ajuste:</b> Este incremento  y Credito Hipotecario permite que la nueva relación cuota/ingreso sea de 
-    <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando la Estabilidad economica en mi flijo mensual ya que al momento es de 56%.
+    <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando la mejora de mi flujo mensual ya que al momento es del 56%.
 </div>
 """, unsafe_allow_html=True)
 
