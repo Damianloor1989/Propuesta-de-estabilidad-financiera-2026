@@ -2,101 +2,94 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Configuración de página
-st.set_page_config(page_title="Propuesta Financiera Avanzada", layout="wide")
+# 1. CONFIGURACIÓN DE IDENTIDAD VISUAL
+st.set_page_config(page_title="Propuesta Ejecutiva - Asistente de Crédito", layout="wide")
 
-# Estilos CSS
 st.markdown("""
 <style>
-    .main { background-color: #f4f7f6; }
-    .stMetric { background-color: #ffffff; padding: 15px; border-radius: 10px; border: 1px solid #d1d5db; }
-    h1, h2, h3 { color: #064e3b; }
+    .main { background-color: #f0f2f6; }
+    .stMetric { background-color: #ffffff; padding: 20px; border-radius: 15px; border: 1px solid #d1d5db; box-shadow: 0px 4px 6px rgba(0,0,0,0.05); }
+    h1, h2, h3 { color: #1e3a8a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .justificacion { background-color: #e0f2fe; padding: 20px; border-radius: 10px; border-left: 5px solid #0369a1; }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📊 Análisis de Consolidación y Estabilidad Financiera")
-st.markdown(f"**Postulante:** Asistente de Crédito (13 años de trayectoria)")
+# 2. ENCABEZADO PERSONALIZADO
+st.title("💼 Plan de Fortalecimiento y Estabilidad Financiera")
+st.subheader("Solicitante: [Damian Loor Guerrero")
+st.markdown("**Cargo:** Asistente de Crédito | **Trayectoria:** 13 años de servicio ininterrumpido")
 st.markdown("---")
 
-# --- SIDEBAR: PARÁMETROS BANCARIOS REALES ---
-st.sidebar.header("⚙️ Configuración del Crédito")
-tipo_tabla = st.sidebar.selectbox("Tipo de Amortización", ["Francesa (Cuota Fija)", "Alemana (Cuota Decreciente)"])
+# 3. SECCIÓN DE LOGROS (Puntos de personalización manual)
+st.header("📈 Rendimiento y Aporte Técnico")
+col_logro1, col_logro2, col_logro3 = st.columns(3)
 
-monto = st.sidebar.number_input("Monto del Crédito ($)", value=25000.0)
-plazo_años = st.sidebar.slider("Plazo (Años)", 5, 25, 15)
-tasa_anual = st.sidebar.slider("Tasa de Interés Anual (%)", 8.0, 11.5, 9.5)
+with col_logro1:
+    st.metric(label="Experiencia", value="13 Años", delta="Estabilidad")
+with col_logro2:
+    st.metric(label="Efectividad", value="98%", delta="Precisión")
+with col_logro3:
+    st.metric(label="Gestión", value="Manabí", delta="Dominio Regional")
 
-st.sidebar.subheader("🛡️ Seguros Obligatorios")
-tasa_desgravamen = st.sidebar.number_input("Tasa Desgravamen Mensual (%)", value=0.05, format="%.3f")
-tasa_incendio = st.sidebar.number_input("Tasa Incendio/Aliados Mensual (%)", value=0.02, format="%.3f")
 
-salario_propuesto = st.sidebar.number_input("Salario Propuesto ($)", value=1200.0)
+# 4. BARRA LATERAL: PARÁMETROS FINANCIEROS (Cambios manuales aquí)
+st.sidebar.header("⚙️ Configuración de la Propuesta")
 
-# --- CÁLCULOS FINANCIEROS ---
-n = plazo_años * 12
+st.sidebar.subheader("Laboral")
+salario_base = st.sidebar.number_input("Salario Actual ($)", value=750.0) # CAMBIAR AQUÍ
+pct_aumento = st.sidebar.slider("Aumento solicitado (%)", 5, 15, 6) # CAMBIAR AQUÍ
+salario_nuevo = salario_base * (1 + pct_aumento / 100)
+
+st.sidebar.subheader("Crédito Hipotecario")
+tipo_tabla = st.sidebar.selectbox("Tabla de Amortización", ["Francesa (Cuota Fija)", "Alemana (Amortización Fija)"])
+monto_credito = st.sidebar.number_input("Monto Solicitado ($)", value=50000.0) # CAMBIAR AQUÍ
+tasa_anual = st.sidebar.slider("Tasa de Interés (%)", 8.5, 12.0, 9.5)
+plazo_anios = st.sidebar.slider("Plazo (Años)", 5, 25, 20)
+
+st.sidebar.subheader("Seguros de Ley")
+seguro_desgravamen = st.sidebar.number_input("Tasa Desgravamen (%)", value=0.05, format="%.3f")
+seguro_incendio = st.sidebar.number_input("Tasa Incendio/Aliados (%)", value=0.02, format="%.3f")
+
+# 5. LÓGICA DE AMORTIZACIÓN Y SEGUROS
 i = (tasa_anual / 100) / 12
-seguro_mensual = monto * ((tasa_desgravamen + tasa_incendio) / 100)
+n = plazo_anios * 12
+seguro_fijo = monto_credito * ((seguro_desgravamen + seguro_incendio) / 100)
 
 if "Francesa" in tipo_tabla:
-    cuota_base = (monto * i) / (1 - (1 + i)**-n)
-    cuota_total_inicial = cuota_base + seguro_mensual
+    cuota_base = (monto_credito * i) / (1 - (1 + i)**-n)
+    cuota_inicial_total = cuota_base + seguro_fijo
 else: # Alemana
-    amortizacion_fija = monto / n
-    interes_inicial = monto * i
-    cuota_total_inicial = amortizacion_fija + interes_inicial + seguro_mensual
+    cuota_inicial_total = (monto_credito / n) + (monto_credito * i) + seguro_fijo
 
-# --- SECCIÓN 1: COMPARATIVA DE CAPACIDAD DE PAGO ---
-st.header("🔄 Optimización del Endeudamiento")
-col1, col2 = st.columns(2)
+# 6. ANÁLISIS DE CAPACIDAD DE PAGO (56% de relación actual)
+st.header("🔄 Optimización del Riesgo Financiero")
+c1, c2 = st.columns(2)
 
-with col1:
-    st.subheader("Situación Actual")
+with c1:
+    st.subheader("Situación Sin Consolidar")
     st.metric("Relación Cuota/Ingreso Actual", "56%", delta="Exceso de carga", delta_color="inverse")
-    st.warning("⚠️ La carga financiera actual limita la capacidad de ahorro y estabilidad.")
+    st.write("La carga actual dispersa compromete el flujo de caja personal.")
 
-with col2:
-    relacion_nueva = (cuota_total_inicial / salario_propuesto) * 100
+with c2:
+    relacion_nueva = (cuota_inicial_total / salario_nuevo) * 100
     st.subheader("Situación Proyectada")
-    st.metric("Nueva Relación Cuota/Ingreso", f"{relacion_nueva:.1f}%", delta=f"{relacion_nueva - 56:.1f}% Mejora", delta_color="normal")
+    st.metric("Nueva Relación Cuota/Ingreso", f"{relacion_nueva:.1f}%", delta=f"{relacion_nueva - 56:.1f}% Mejora")
     if relacion_nueva < 40:
-        st.success("✅ Relación óptima bajo estándares bancarios (<40%).")
+        st.success("✅ Nivel de riesgo Manejable.")
 
-# --- SECCIÓN 2: TABLA DE AMORTIZACIÓN ---
-st.header(f"📅 Proyección de Pagos ({tipo_tabla})")
-
-# Generar Tabla
-tabla_data = []
-saldo = monto
-for mes in range(1, n + 1):
-    interes_mes = saldo * i
-    seguros_mes = saldo * ((tasa_desgravamen + tasa_incendio) / 100) # Ajustado al saldo insoluto
-    
-    if "Francesa" in tipo_tabla:
-        cuota_capital = cuota_base - interes_mes
-    else:
-        cuota_capital = monto / n
-    
-    pago_total = cuota_capital + interes_mes + seguros_mes
-    saldo -= cuota_capital
-    
-    if mes <= 12: # Solo mostrar el primer año por brevedad
-        tabla_data.append([mes, cuota_capital, interes_mes, seguros_mes, pago_total, max(saldo, 0)])
-
-df_tabla = pd.DataFrame(tabla_data, columns=["Mes", "Capital ($)", "Interés ($)", "Seguros ($)", "Cuota Total ($)", "Saldo Pendiente ($)"])
-st.write("**Proyección del Primer Año:**")
-st.table(df_tabla.style.format("{:.2f}"))
-
-# --- SECCIÓN 3: JUSTIFICACIÓN ---
+# 7. JUSTIFICACIÓN Y CIERRE
 st.markdown("---")
-st.subheader("📝 Sustento Técnico")
-st.write(f"""
-Esta propuesta busca reducir mi exposición financiera del **56% actual** a un manejable **{relacion_nueva:.1f}%**. 
-Al consolidar deudas mediante un crédito hipotecario con seguros de ley (Desgravamen e Incendio), 
-garantizo la cobertura total de la operación y la protección del patrimonio que sirve como garantía institucional.
-""")
+st.markdown(f"""
+<div class="justificacion">
+    <h3>Justificación Técnica</h3>
+    <p>Tras 13 años de experiencia en la institución, presento este análisis de viabilidad para unificar pasivos y mejorar mi vivienda. 
+    Al reducir mi carga financiera del <b>56%</b> a un <b>{relacion_nueva:.1f}%</b>, garantizo el cumplimiento puntual de mis obligaciones 
+    y refuerzo mi compromiso a largo plazo con la Institucion.</p>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("""
-<div style="text-align: center; padding: 20px;">
-    <p><i>13 años de experiencia respaldan mi capacidad para gestionar este compromiso con responsabilidad.</i></p>
+<div style="text-align: center; color: gray; font-size: 0.8em; margin-top: 30px;">
+    <i>Generado mediante análisis técnico de crédito y herramientas de automatización Python.</i>
 </div>
 """, unsafe_allow_html=True)
