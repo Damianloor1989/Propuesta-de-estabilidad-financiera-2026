@@ -63,9 +63,14 @@ with col_s3:
 
 st.markdown(f"""
 <div class="salary-card">
-    <b>Impacto del Ajuste:</b> Este incremento  y Credito Hipotecario permite que la nueva relación cuota/ingreso sea de 
-    <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando una mejora en mi ingreso neto mensual ya que al momento esta en el 56%
-    <b>Cambio en plan de datos moviles:</b> Ajuste en el subsidio del 50% del plan de datos moviles al 100% por llamadas a Referencias via whatsapp.</b>
+    <p>
+        <b>Impacto del Ajuste:</b> Este incremento y Crédito Hipotecario permite que la nueva relación cuota/ingreso sea de 
+        <b>{(cuota_nueva_total/salario_nuevo)*100:.1f}%</b>, garantizando una mejora en mi ingreso neto mensual ya que al momento esta en el 56%.
+    </p>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+    <p>
+        <b>Cambio en plan de datos móviles:</b> Ajuste en el subsidio del 50% del plan de datos móviles al 100% por llamadas a Referencias vía WhatsApp.
+    </p>
 </div>
 """, unsafe_allow_html=True)
 
