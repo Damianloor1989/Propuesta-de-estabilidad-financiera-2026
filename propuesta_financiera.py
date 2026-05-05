@@ -69,7 +69,7 @@ st.markdown(f"""
     </p>
     <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
     <p>
-        <b>Cambio en plan de datos móviles:</b> Ajuste en el subsidio del 50% del plan de datos móviles al 100% por llamadas a Referencias vía WhatsApp.
+        <b>Cambio en plan de datos móviles:</b> Ajuste en el subsidio del 50% del plan de datos móviles al 100% para llamadas a Referencias vía WhatsApp.
     </p>
 </div>
 """, unsafe_allow_html=True)
