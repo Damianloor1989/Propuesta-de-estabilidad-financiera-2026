@@ -105,7 +105,7 @@ g_col1, g_col2 = st.columns(2)
 with g_col1:
     # Gráfico de barras de operaciones
     df_ops = pd.DataFrame({
-        "Actividad": ["Rural Individual (Actual Proceso Completo)", "Promedio Orion (Histórico Proceso Parcial)"],
+        "Actividad": ["Rural Actual (Proceso de credito Completo)", "Promedio Histórico (Proceso de credito Parcial)"],
         "Operaciones Mensuales": [90, 180]
     })
     fig_ops = px.bar(df_ops, x="Actividad", y="Operaciones Mensuales", color="Actividad", 
