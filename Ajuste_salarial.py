@@ -82,8 +82,8 @@ st.header("3. Propuesta Económica y Requerimiento Operativo")
 
 # Sidebar para interactividad
 st.sidebar.header("Variables de la Propuesta")
-aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 10, 30, 15)
-salario_base = 850.0  # Puedes ajustar tu sueldo base real aquí
+aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 5, 15, 6)
+salario_base = 750.0  # Puedes ajustar tu sueldo base real aquí
 salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
