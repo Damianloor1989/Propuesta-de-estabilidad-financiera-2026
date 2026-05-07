@@ -2,74 +2,131 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Propuesta de Analisis y Ajuste Salarial", layout="wide")
+# 1. CONFIGURACIÓN Y ESTILO
+st.set_page_config(page_title="Propuesta de Ajuste Salarial - Seniority Crédito", layout="wide")
 
 st.markdown("""
 <style>
     .main { background-color: #f8fafc; }
     .stMetric { background-color: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #cbd5e1; }
-    .card-valor { background-color: #eff6ff; padding: 25px; border-radius: 10px; border-left: 6px solid #1e40af; }
-    .card-retencion { background-color: #f0fdf4; padding: 25px; border-radius: 10px; border-left: 6px solid #16a34a; }
+    .card-sustento { background-color: #f1f5f9; padding: 20px; border-radius: 10px; border-left: 6px solid #1e3a8a; }
+    .card-beneficio { background-color: #f0fdf4; padding: 20px; border-radius: 10px; border-left: 6px solid #16a34a; }
+    .card-peticion { background-color: #fffbeb; padding: 20px; border-radius: 10px; border-left: 6px solid #d97706; }
+    h1, h2, h3 { color: #1e3a8a; }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🚀 Propuesta de Ajuste Salarial")
-st.subheader("Análisis Técnico de Trayectoria - 13 Años de Experiencia")
+st.title("🚀 Propuesta de Evolución Profesional y Fortalecimiento Operativo")
 st.markdown("---")
 
-# SIDEBAR PARA AJUSTES
-st.sidebar.header("📊 Variables de la Propuesta")
-salario_base = st.sidebar.number_input("Remuneración Actual ($)", value=750.0, step=50.0)
-pct_aumento = st.sidebar.slider("Ajuste Sugerido (%)", 5, 15, 6)
-salario_nuevo = salario_base * (1 + pct_aumento / 100)
+# 1. MI LABOR Y SUSTENTO DEL AUMENTO
+st.header("1. Valor Técnico y Operativo (Sustento)")
+col_t1, col_t2 = st.columns(2)
 
-# MÉTRICAS DE IMPACTO
-st.header("📈 Impacto del Ajuste Salarial")
-c1, c2, c3 = st.columns(3)
-with c1:
-    st.metric("Salario Actual", f"${salario_base:,.2f}")
-with c2:
-    st.metric("Salario Propuesto", f"${salario_nuevo:,.2f}", delta=f"+{pct_aumento}%")
-with c3:
-    st.metric("Incremento Neto Mensual", f"${salario_nuevo - salario_base:,.2f}")
-
-st.markdown("---")
-
-# SECCIÓN DE VALOR AGREGADO
-col_left, col_right = st.columns(2)
-
-with col_left:
+with col_t1:
     st.markdown("""
-    <div class="card-valor">
-        <h3>💡 Valor Técnico y Operativo</h3>
+    <div class="card-sustento">
+        <h4>💪 Capacidad de Gestión y Flujo</h4>
         <ul>
-            <li><b>Manejo de flujo operativo:</b> Ingreso, verificacion y procesamiento de operaciones de creditos individual Rural (90 operaciones promedio actualmente).</li>
-            <li><b>Dominio de sistema financiero Orion:</b> 11 años asistiendo las cartera de 5 asesores con desembolsos promedio de los 11 años de 180 operaciones de credito mensuales .</li>
-            <li><b>Eficiencia:</b> Adaptacion rapida y continua a nuevos procesos y mayor responsabilidad y carga laboral.</li>
-<li><b>Predisposicion:</b> Desempeño con la mejor actitud y aptitud para con las directrices y recomendaciones recibidas desde el primer dia hasta el presente .</li>
+            <li><b>Manejo de Flujo Operativo Rural:</b> Ingreso, verificación y procesamiento de un promedio de <b>90 operaciones mensuales</b> actualmente.</li>
+            <li><b>Dominio del Sistema Orion:</b> 11 años de especialización técnica asistiendo las carteras de 5 asesores.</li>
+            <li><b>Récord de Desembolsos:</b> Gestión histórica de un promedio de <b>180 operaciones de crédito mensuales</b> durante más de una década.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
 
-with col_right:
+with col_t2:
     st.markdown("""
-    <div class="card-retencion">
-        <h3>🤝 Beneficios para la Empresa</h3>
+    <div class="card-sustento">
+        <h4>📈 Eficiencia y Predisposición</h4>
         <ul>
-            <li><b>Retención de Conocimiento:</b> Continuidad de un pilar de la memoria institucional del banco.</li>
-            <li><b>Liderazgo Senior:</b> Mentoría interna para analistas junior basada en experiencia probada.</li>
-            <li><b>Innovación:</b> Capacidad de implementar soluciones tecnológicas sin costo externo de consultoría.</li>
+            <li><b>Adaptación Continua:</b> Capacidad probada para absorber nuevos procesos y mayores cargas laborales de forma rápida.</li>
+            <li><b>Actitud Institucional:</b> Desempeño con la mejor aptitud y alineación total a las directrices recibidas desde el primer día.</li>
+            <li><b>Seniority:</b> 13 años de experiencia que garantizan la mitigación de errores en el ciclo de crédito.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
 
-# GRÁFICO DE CRECIMIENTO PROFESIONAL
-st.subheader("Proyección de Valor Institucional")
-df_crecimiento = pd.DataFrame({
-    "Año": ["2013", "2018", "2023", "2026 (Proyectado)"],
-    "Valor para la Empresa": [20, 50, 85, 100]
-})
-fig = px.line(df_crecimiento, x="Año", y="Valor para la Empresa", markers=True, title="Curva de Especialización y Seniority")
-st.plotly_chart(fig, use_container_width=True)
+# 2. BENEFICIOS (PERSONALES Y PARA LA INSTITUCIÓN)
+st.markdown("---")
+st.header("2. Matriz de Beneficios")
+b_col1, b_col2 = st.columns(2)
 
-st.info("Nota: Esta propuesta busca nivelar la compensación con la alta especialización técnica demostrada durante más de una década.")
+with b_col1:
+    st.markdown("""
+    <div class="card-beneficio">
+        <h4>🤝 Para la Institución</h4>
+        <ul>
+            <li><b>Seguridad Operativa:</b> Reducción de riesgos mediante el análisis de un experto con memoria institucional.</li>
+            <li><b>Productividad Alta:</b> Procesamiento ágil de carteras compartidas (5 asesores simultáneos).</li>
+            <li><b>Cero Costo de Formación:</b> Talento totalmente operativo y actualizado en sistemas internos.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+with b_col2:
+    st.markdown("""
+    <div class="card-beneficio">
+        <h4>👤 Para el Colaborador</h4>
+        <ul>
+            <li>Reconocimiento al desempeño y la lealtad de largo plazo.</li>
+            <li>Compensación alineada a la alta carga operativa actual.</li>
+            <li>Herramientas para garantizar la eficiencia (Conectividad móvil).</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+# 3. PETICIÓN CON VALORES Y GRÁFICOS
+st.markdown("---")
+st.header("3. Propuesta Económica y Requerimiento Operativo")
+
+# Sidebar para interactividad
+st.sidebar.header("Variables de la Propuesta")
+aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 10, 30, 15)
+salario_base = 850.0  # Puedes ajustar tu sueldo base real aquí
+salario_nuevo = salario_base * (1 + aumento_pct/100)
+
+# Petición específica del Plan de Datos
+subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos (Referencias WhatsApp)", 
+                                  ["Sin subsidio", "50% ($5)", "100% ($10)"], index=2)
+
+p1, p2, p3 = st.columns(3)
+with p1:
+    st.metric("Salario Propuesto", f"${salario_nuevo:,.2f}", delta=f"+{aumento_pct}%")
+with p2:
+    st.metric("Subsidio Móvil", f"{subsidio_datos}")
+with p3:
+    costo_datos = 10 if "100%" in subsidio_datos else (5 if "50%" in subsidio_datos else 0)
+    st.metric("Total Compensación", f"${salario_nuevo + costo_datos:,.2f}")
+
+# Gráficos
+st.markdown("### Visualización de Impacto Operativo")
+g_col1, g_col2 = st.columns(2)
+
+with g_col1:
+    # Gráfico de barras de operaciones
+    df_ops = pd.DataFrame({
+        "Actividad": ["Rural Individual (Actual)", "Promedio Orion (Histórico)"],
+        "Operaciones Mensuales": [90, 180]
+    })
+    fig_ops = px.bar(df_ops, x="Actividad", y="Operaciones Mensuales", color="Actividad", 
+                     text_auto=True, title="Volumen de Gestión Mensual")
+    st.plotly_chart(fig_ops, use_container_width=True)
+
+with g_col2:
+    # Gráfico de eficiencia con/sin datos
+    df_ef = pd.DataFrame({
+        "Condición": ["Sin Plan de Datos", "Con Plan de Datos (100%)"],
+        "Eficiencia en Validación": [60, 100]
+    })
+    fig_ef = px.line(df_ef, x="Condición", y="Eficiencia en Validación", markers=True, 
+                     title="Impacto del Plan de Datos en Verificación de Referencias")
+    st.plotly_chart(fig_ef, use_container_width=True)
+
+st.markdown(f"""
+<div class="card-peticion">
+    <b>Justificación Técnica del Plan de Datos:</b> Dada la naturaleza de las 90 operaciones rurales mensuales, la validación inmediata 
+    de referencias vía WhatsApp es un paso crítico. El subsidio del 100% ($10) garantiza que el flujo de trabajo no se detenga, 
+    permitiendo una respuesta inmediata a los asesores y clientes.
+</div>
+""", unsafe_allow_html=True)
