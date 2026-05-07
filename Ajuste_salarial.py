@@ -82,13 +82,13 @@ st.header("3. Propuesta Económica y Requerimiento Operativo")
 
 # Sidebar para interactividad
 st.sidebar.header("Variables de la Propuesta")
-aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 5, 15, 6)
-salario_base = 750.0  # Puedes ajustar tu sueldo base real aquí
+aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 10, 30, 15)
+salario_base = 850.0  # Puedes ajustar tu sueldo base real aquí
 salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
-plan_de_datos_moviles = st.sidebar.radio("Copago Plan de Datos (Llamadas a Referencias via WhatsApp)", 
-                                  ["Copago", "50% ($5)", "100% ($10)"], index=2)
+subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos (Referencias WhatsApp)", 
+                                  ["Sin subsidio", "50% ($5)", "100% ($10)"], index=2)
 
 p1, p2, p3 = st.columns(3)
 with p1:
@@ -126,7 +126,7 @@ with g_col2:
 st.markdown(f"""
 <div class="card-peticion">
     <b>Justificación Técnica del Plan de Datos:</b> Dada la naturaleza de las 90 operaciones rurales mensuales, la validación inmediata 
-    de referencias vía WhatsApp es un paso crítico. El pago del 100% ($10) garantiza que el flujo de trabajo sea continuo, 
+    de referencias vía WhatsApp es un paso crítico. El subsidio del 100% ($10) garantiza que el flujo de trabajo sea continuo, 
     permitiendo una respuesta inmediata a los asesores y clientes.
 </div>
 """, unsafe_allow_html=True)
