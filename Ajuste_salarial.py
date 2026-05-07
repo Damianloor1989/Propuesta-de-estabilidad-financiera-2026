@@ -117,7 +117,7 @@ with g_col2:
     # Gráfico de eficiencia con/sin datos
     df_ef = pd.DataFrame({
         "Condición": ["Sin Plan de Datos", "Con Plan de Datos (100%)"],
-        "Eficiencia en Validación": [60, 100]
+        "Eficiencia en Validación": [45, 100,80]
     })
     fig_ef = px.line(df_ef, x="Condición", y="Eficiencia en Validación", markers=True, 
                      title="Impacto del Plan de Datos en Verificación de Referencias")
