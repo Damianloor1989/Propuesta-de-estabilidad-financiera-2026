@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # 1. CONFIGURACIÓN Y ESTILO
-st.set_page_config(page_title="Propuesta de Ajuste Salarial - Seniority Crédito", layout="wide")
+st.set_page_config(page_title="Propuesta de Ajuste Salarial 2026", layout="wide")
 
 st.markdown("""
 <style>
@@ -16,7 +16,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🚀 Propuesta de Evolución Profesional y Fortalecimiento Operativo")
+st.title("🚀 Propuesta de Estabilidad Profesional y Fortalecimiento Operativo")
 st.markdown("---")
 
 # 1. MI LABOR Y SUSTENTO DEL AUMENTO
@@ -29,8 +29,8 @@ with col_t1:
         <h4>💪 Capacidad de Gestión y Flujo</h4>
         <ul>
             <li><b>Manejo de Flujo Operativo Rural:</b> Ingreso, verificación y procesamiento de un promedio de <b>90 operaciones mensuales</b> actualmente.</li>
-            <li><b>Dominio del Sistema Orion:</b> 11 años de especialización técnica asistiendo las carteras de 5 asesores.</li>
-            <li><b>Récord de Desembolsos:</b> Gestión histórica de un promedio de <b>180 operaciones de crédito mensuales</b> durante más de una década.</li>
+            <li><b>Dominio del Sistema Orion:</b> 11 años de experiencia técnica asistiendo las carteras de 5 y hasta 6 asesores de credito.</li>
+            <li><b> Historico Desembolsos:</b> Gestión de una parte del proceso de un promedio de <b>180 operaciones de crédito mensuales</b> durante más de una década.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -42,7 +42,7 @@ with col_t2:
         <ul>
             <li><b>Adaptación Continua:</b> Capacidad probada para absorber nuevos procesos y mayores cargas laborales de forma rápida.</li>
             <li><b>Actitud Institucional:</b> Desempeño con la mejor aptitud y alineación total a las directrices recibidas desde el primer día.</li>
-            <li><b>Seniority:</b> 13 años de experiencia que garantizan la mitigación de errores en el ciclo de crédito.</li>
+            <li><b>Seniority:</b> 13 años de experiencia que garantizan un minimo de errores en el ciclo de crédito.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -57,9 +57,9 @@ with b_col1:
     <div class="card-beneficio">
         <h4>🤝 Para la Institución</h4>
         <ul>
-            <li><b>Seguridad Operativa:</b> Reducción de riesgos mediante el análisis de un experto con memoria institucional.</li>
-            <li><b>Productividad Alta:</b> Procesamiento ágil de carteras compartidas (5 asesores simultáneos).</li>
-            <li><b>Cero Costo de Formación:</b> Talento totalmente operativo y actualizado en sistemas internos.</li>
+            <li><b>Seguridad Operativa:</b> Reducción de riesgos operativos mediante el manejo correcto de las diferentes herramientas tecnologicas de la institucion.</li>
+            <li><b>Productividad Alta:</b> Procesamiento ágil de diferentes tareas requeridas (5 asesores simultáneos).</li>
+            <li><b>Cero Costo de Formación:</b> Conocimiento totalmente operativo y actualizado en sistemas internos.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -82,13 +82,13 @@ st.header("3. Propuesta Económica y Requerimiento Operativo")
 
 # Sidebar para interactividad
 st.sidebar.header("Variables de la Propuesta")
-aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 10, 30, 15)
-salario_base = 850.0  # Puedes ajustar tu sueldo base real aquí
+aumento_pct = st.sidebar.slider("Ajuste Salarial (%)", 5, 15, 6)
+salario_base = 750.0  # Puedes ajustar tu sueldo base real aquí
 salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
-subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos (Referencias WhatsApp)", 
-                                  ["Sin subsidio", "50% ($5)", "100% ($10)"], index=2)
+plan_de_datos_moviles = st.sidebar.radio("Copago Plan de Datos (Llamadas a Referencias via WhatsApp)", 
+                                  ["Copago", "50% ($5)", "100% ($10)"], index=2)
 
 p1, p2, p3 = st.columns(3)
 with p1:
@@ -126,7 +126,7 @@ with g_col2:
 st.markdown(f"""
 <div class="card-peticion">
     <b>Justificación Técnica del Plan de Datos:</b> Dada la naturaleza de las 90 operaciones rurales mensuales, la validación inmediata 
-    de referencias vía WhatsApp es un paso crítico. El subsidio del 100% ($10) garantiza que el flujo de trabajo no se detenga, 
+    de referencias vía WhatsApp es un paso crítico. El pago del 100% ($10) garantiza que el flujo de trabajo sea continuo, 
     permitiendo una respuesta inmediata a los asesores y clientes.
 </div>
 """, unsafe_allow_html=True)
