@@ -99,31 +99,7 @@ with p3:
     costo_datos = 5 if "100%" in subsidio_datos else (0 if "50%" in subsidio_datos else 0)
     st.metric("Total Consolidado", f"${salario_nuevo + costo_datos:,.2f}")
 
-# Gráficos
-st.markdown("### Visualización de Impacto Operativo")
-g_col1, g_col2 = st.columns(2)
 
-with g_col1:
-    # Gráfico de barras de operaciones
-    df_ops = pd.DataFrame({
-        "Actividad": ["Rural Individual (Actual)", "Promedio Orion (Histórico)"],
-        "Operaciones Mensuales": [90, 180]
-    })
-    fig_ops = px.bar(df_ops, x="Actividad", y="Operaciones Mensuales", color="Actividad", 
-                     text_auto=True, title="Volumen de Gestión Mensual")
-    st.plotly_chart(fig_ops, use_container_width=True)
-
-with g_col2:
-    # Gráfico de eficiencia con/sin datos
-    df_ef = pd.DataFrame({
-        "Condición": ["Sin Plan de Datos", "Con Plan de Datos"],
-        "Eficiencia en Validación": [40, 80]
-    })
-    fig_ef = px.line(df_ef, x="Condición", y="Eficiencia en Validación", markers=True, 
-                     title="Impacto del Plan de Datos en Verificación de Referencias")
-    st.plotly_chart(fig_ef, use_container_width=True)
-
-st.markdown(f"""
 <div class="card-peticion">
     <b>Justificación Técnica del Plan de Datos:</b> Dada la naturaleza de las 90 operaciones rurales mensuales, la validación inmediata 
     de referencias vía WhatsApp es un paso importante. El subsidio del 100% ($10) garantiza que el flujo de trabajo sea continuo, 
