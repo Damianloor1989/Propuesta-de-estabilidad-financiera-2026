@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Propuesta de Evolución Profesional", layout="wide")
+st.set_page_config(page_title="Propuesta de Analisis y Ajuste Salarial", layout="wide")
 
 st.markdown("""
 <style>
@@ -13,14 +13,14 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🚀 Propuesta de Valor y Evolución Salarial")
+st.title("🚀 Propuesta de Ajuste Salarial")
 st.subheader("Análisis Técnico de Trayectoria - 13 Años de Experiencia")
 st.markdown("---")
 
 # SIDEBAR PARA AJUSTES
 st.sidebar.header("📊 Variables de la Propuesta")
-salario_base = st.sidebar.number_input("Remuneración Actual ($)", value=850.0, step=50.0)
-pct_aumento = st.sidebar.slider("Ajuste Sugerido (%)", 5, 50, 15)
+salario_base = st.sidebar.number_input("Remuneración Actual ($)", value=750.0, step=50.0)
+pct_aumento = st.sidebar.slider("Ajuste Sugerido (%)", 5, 15, 6)
 salario_nuevo = salario_base * (1 + pct_aumento / 100)
 
 # MÉTRICAS DE IMPACTO
@@ -43,9 +43,10 @@ with col_left:
     <div class="card-valor">
         <h3>💡 Valor Técnico y Operativo</h3>
         <ul>
-            <li><b>Automatización de Reportes:</b> Desarrollo de scripts en Python para agilizar el análisis de mora.</li>
-            <li><b>Dominio de Cartera:</b> 13 años gestionando riesgos en la zona de Manta/Portoviejo con 0% de errores críticos.</li>
-            <li><b>Eficiencia:</b> Optimización del proceso de carga y validación de documentos crediticios.</li>
+            <li><b>Manejo de flujo operativo:</b> Ingreso, verificacion y procesamiento de operaciones de creditos individual Rural (90 operaciones promedio actualmente).</li>
+            <li><b>Dominio de sistema financiero Orion:</b> 11 años asistiendo las cartera de 5 asesores con desembolsos promedio de los 11 años de 180 operaciones de credito mensuales .</li>
+            <li><b>Eficiencia:</b> Adaptacion rapida y continua a nuevos procesos y mayor responsabilidad y carga laboral.</li>
+<li><b>Predisposicion:</b> Desempeño con la mejor actitud y aptitud para con las directrices y recomendaciones recibidas desde el primer dia hasta el presente .</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
