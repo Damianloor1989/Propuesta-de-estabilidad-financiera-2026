@@ -87,8 +87,8 @@ salario_base = 750.0  # Puedes ajustar tu sueldo base real aquí
 salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
-subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos (Referencias WhatsApp)", 
-                                  ["Sin subsidio", "50% ($5)", "100% ($10)"], index=2)
+subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos (Llamadas a Referencias via WhatsApp)", 
+                                  ["Sin subsidio", "50% ($5)", "100% ($10)"], index=1)
 
 p1, p2, p3 = st.columns(3)
 with p1:
