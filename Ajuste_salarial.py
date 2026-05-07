@@ -97,7 +97,7 @@ with p2:
     st.metric("Subsidio Móvil", f"{subsidio_datos}")
 with p3:
     costo_datos = 5 if "100%" in subsidio_datos else (0 if "50%" in subsidio_datos else 0)
-    st.metric("Total Compensación", f"${salario_nuevo + costo_datos:,.2f}")
+    st.metric("Total Consolidado", f"${salario_nuevo + costo_datos:,.2f}")
 
 # Gráficos
 st.markdown("### Visualización de Impacto Operativo")
