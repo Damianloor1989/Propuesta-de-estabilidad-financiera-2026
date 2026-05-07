@@ -57,7 +57,7 @@ with b_col1:
     <div class="card-beneficio">
         <h4>🤝 Para la Institución</h4>
         <ul>
-            <li><b>Seguridad Operativa:</b> Reducción de riesgos operativos mediante el manejo correcto de las diferentes herramientas tecnologicas de la institucion.</li>
+            <li><b>Seguridad Operativa:</b> Reducción de riesgos operativos mediante la experiencia en el manejo correcto de las diferentes herramientas tecnologicas de la institucion.</li>
             <li><b>Productividad Alta:</b> Procesamiento ágil de diferentes tareas requeridas (5 asesores simultáneos).</li>
             <li><b>Cero Costo de Formación:</b> Conocimiento totalmente operativo y actualizado en sistemas internos.</li>
         </ul>
