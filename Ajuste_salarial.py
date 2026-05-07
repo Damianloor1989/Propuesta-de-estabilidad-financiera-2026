@@ -94,7 +94,7 @@ p1, p2, p3 = st.columns(3)
 with p1:
     st.metric("Salario Propuesto", f"${salario_nuevo:,.2f}", delta=f"+{aumento_pct}%")
 with p2:
-    st.metric("Subsidio Móvil", f"{subsidio_datos}")
+    st.metric("Subsidio Móvil", f"{subsidio_datos-5}")
 with p3:
     costo_datos = 10 if "100%" in subsidio_datos else (5 if "50%" in subsidio_datos else 0)
     st.metric("Total Compensación", f"${salario_nuevo + costo_datos:,.2f}")
