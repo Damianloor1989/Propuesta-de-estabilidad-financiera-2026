@@ -128,6 +128,6 @@ st.markdown(f"""
 <div class="card-peticion">
     <b>Justificación Técnica del Plan de Datos:</b> Dada la naturaleza de las 90 operaciones rurales mensuales, la validación inmediata 
     de referencias vía WhatsApp es un paso importante. El subsidio del 100% ($10) garantiza que el flujo de trabajo sea continuo, 
-    permitiendo una respuesta inmediata a los asesores y clientes.
+    permitiendo una respuesta mas inmediata a los asesores y clientes.
 </div>
 """, unsafe_allow_html=True)
