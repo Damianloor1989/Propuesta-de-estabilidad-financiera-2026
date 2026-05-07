@@ -88,7 +88,7 @@ salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
 subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos $10 (Llamadas a Referencias via WhatsApp)", 
-                                  ["50% ($0)", "100% ($5)"], index=2)
+                                  ["50% ($0)", "100% ($5)"], index=1)
 
 p1, p2, p3 = st.columns(3)
 with p1:
