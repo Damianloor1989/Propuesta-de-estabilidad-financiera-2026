@@ -88,13 +88,13 @@ salario_nuevo = salario_base * (1 + aumento_pct/100)
 
 # Petición específica del Plan de Datos
 subsidio_datos = st.sidebar.radio("Subsidio Plan de Datos $10 (Llamadas a Referencias via WhatsApp)", 
-                                  ["50% ($5)", "100% ($10)"], index=1)
+                                  ["50% ($0)", "100% ($5)"], index=2)
 
 p1, p2, p3 = st.columns(3)
 with p1:
     st.metric("Salario Propuesto", f"${salario_nuevo:,.2f}", delta=f"+{aumento_pct}%")
 with p2:
-    st.metric("Subsidio Móvil", f"{subsidio_datos-5}")
+    st.metric("Subsidio Móvil", f"{subsidio_datos}")
 with p3:
     costo_datos = 10 if "100%" in subsidio_datos else (5 if "50%" in subsidio_datos else 0)
     st.metric("Total Compensación", f"${salario_nuevo + costo_datos:,.2f}")
