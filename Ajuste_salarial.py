@@ -116,7 +116,7 @@ with g_col1:
 with g_col2:
     # Gráfico de eficiencia con/sin datos
     df_ef = pd.DataFrame({
-        "Condición": ["Sin Plan de Datos", "Con Plan de Datos (100%)"],
+        "Condición": ["Sin Plan de Datos", "Con Plan de Datos"],
         "Eficiencia en Validación": [40, 80]
     })
     fig_ef = px.line(df_ef, x="Condición", y="Eficiencia en Validación", markers=True, 
