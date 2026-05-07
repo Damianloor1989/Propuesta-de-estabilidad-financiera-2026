@@ -42,7 +42,7 @@ with col_t2:
         <ul>
             <li><b>Adaptación Continua:</b> Capacidad probada para absorber nuevos procesos y mayores cargas laborales de forma rápida.</li>
             <li><b>Actitud Institucional:</b> Desempeño con la mejor aptitud y alineación total a las directrices recibidas desde el primer día.</li>
-            <li><b>Antiguedad:</b> 13 años de experiencia que garantizan un minimo de errores en el ciclo del proceso crédito y demas actividades.</li>
+            <li><b>Antiguedad:</b> 13 años de experiencia que garantizan un minimo de errores en el ciclo del crédito y demas actividades.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
